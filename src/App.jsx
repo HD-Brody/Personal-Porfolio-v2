@@ -70,35 +70,60 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-32 bg-neutral">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
-          <h2 className="text-5xl sm:text-6xl lg:text-6xl font-black text-neutral-text text-center mb-20">
+      <section id="about" className="py-24 bg-neutral">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <h2 className="text-5xl sm:text-6xl lg:text-6xl font-black text-neutral-text text-center mb-16">
             About Me
           </h2>
-          <div className="max-w-5xl mx-auto">
-            <p className="text-2xl sm:text-3xl text-neutral-text/70 mb-16 text-center font-medium leading-relaxed">
-              I'm currently a student at the University of Toronto pursuing a Computer Science Specialist. 
-              I like to build projects where I can mix problem-solving with design, whether that's a web app, a game, or a personal tool.
-              When I'm not coding, I'm usually drawing, playing guitar, or working on something artistic.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-16">
-              <div className="bg-white/50 p-8 rounded-2xl border-2 border-primary/20">
-                <h3 className="text-3xl font-bold text-neutral-text mb-8">Technical Skills</h3>
-                <ul className="space-y-4 text-xl text-neutral-text/70">
-                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> React & Next.js</li>
-                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> JavaScript & TypeScript</li>
-                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> Node.js & Express</li>
-                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> Python & Django</li>
-                </ul>
+          <div className="max-w-8xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-40 items-center">
+              <div className="flex justify-center lg:justify-end">
+                <div className="relative">
+                  <div className="w-[30rem] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
+                    <img
+                      src="/images/profile.png"
+                      alt="Brody Honigman Deltoff"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
-              <div className="bg-white/50 p-8 rounded-2xl border-2 border-primary/20">
-                <h3 className="text-3xl font-bold text-neutral-text mb-8">Other Skills</h3>
-                <ul className="space-y-4 text-xl text-neutral-text/70">
-                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> UI/UX Design</li>
-                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> Database Design</li>
-                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> API Development</li>
-                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> Cloud Deployment</li>
-                </ul>
+              <div className="space-y-6">
+                <div className="space-y-5">
+                  <p className="text-lg lg:text-xl text-neutral-text/80 leading-relaxed font-medium">
+                    I'm currently a student at the University of Toronto pursuing a Computer Science Specialist.
+                    I love creating projects that combine design with functionality, whether that's
+                    a web application, a game, or a small tool that makes life a bit easier.
+                  </p>
+                  <p className="text-lg lg:text-xl text-neutral-text/80 leading-relaxed font-medium">
+                    I like mixing problem-solving with creativity, and I'm happiest when I see an idea come to life from start to finish.
+                  </p>
+                  <p className="text-lg lg:text-xl text-neutral-text/80 leading-relaxed font-medium">
+                    Outside of coding, I spend a lot of time drawing and playing guitar. 
+                    I've been into art since I was a kid, and I've been playing guitar for about 3 years.
+                    I think that same creative mindset shapes how I approach building projects. 
+                  </p>
+                </div>
+                <div className="pt-2">
+                  <h3 className="text-xl font-bold text-neutral-text mb-4">Quick Facts</h3>
+                  <div className="flex flex-wrap gap-3">
+                    {[
+                      'Full-Stack Developer',
+                      'Hackathon Winner',
+                      'Artist',
+                      'Game Developer',
+                      'Problem Solver',
+                      'Creative Thinker'
+                    ].map((badge, index) => (
+                      <span
+                        key={index}
+                        className="inline-block px-5 py-2.5 bg-primary-light/20 text-primary-dark border-2 border-primary/30 rounded-full font-semibold text-base hover:bg-primary-light/30 hover:border-primary/50 hover:scale-105 transition-all duration-200 cursor-default"
+                      >
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
