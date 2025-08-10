@@ -1,3 +1,5 @@
+import { useTypewriter } from 'react-simple-typewriter';
+
 function App() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -5,6 +7,13 @@ function App() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const [text] = useTypewriter({
+    words: ["Hi, I'm Brody"],
+    loop: 1,
+    typeSpeed: 100,
+    deleteSpeed: 50,
+  });
 
   return (
     <div className="min-h-screen">
@@ -55,7 +64,8 @@ function App() {
       <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-neutral to-primary-light/20 pt-16">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-neutral-text mb-8 leading-none">
-            Hi, I'm Brody
+            {text}
+            <span className="inline-block w-2 h-20 bg-neutral-text ml-2 animate-pulse"></span>
           </h1>
           <p className="text-2xl sm:text-3xl lg:text-4xl text-neutral-text/70 mb-12 max-w-4xl mx-auto font-medium">
             I'm an aspiring software engineer with a passion for building things.
