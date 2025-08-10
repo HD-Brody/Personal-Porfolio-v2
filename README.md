@@ -1,12 +1,12 @@
 # Personal Portfolio v2
 
-A modern, responsive personal portfolio built with React, Vite, and Tailwind CSS. Features a beautiful animated background using Vanta.js and a dark/light theme toggle.
+A modern, responsive personal portfolio built with React, Vite, and Tailwind CSS. Features a clean design with dark/light theme toggle and smooth animations.
 
 ## Features
 
 - 🎨 Modern, responsive design
 - 🌙 Dark/light theme toggle
-- ✨ Animated background with Vanta.js
+- ✨ Smooth scrolling animations
 - 📱 Mobile-friendly
 - ⚡ Fast loading with Vite
 - 🎯 Smooth scrolling navigation
@@ -17,7 +17,7 @@ A modern, responsive personal portfolio built with React, Vite, and Tailwind CSS
 
 - **Frontend**: React 18, Vite
 - **Styling**: Tailwind CSS
-- **Animations**: Vanta.js, Three.js
+- **Animations**: CSS animations and transitions
 - **Icons**: Custom SVG icons
 - **Fonts**: Inter (Google Fonts)
 
