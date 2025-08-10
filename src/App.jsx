@@ -145,7 +145,7 @@ function App() {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Skills Section */} 
       <section id="skills" className="py-32 bg-primary-lightest dark:bg-neutral-dark transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="text-5xl sm:text-6xl lg:text-6xl font-black text-neutral-text dark:text-white text-center mb-20 transition-colors duration-300">
@@ -182,7 +182,7 @@ function App() {
                         className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
                                   transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
                       >
-                        <div className="w-16 h-16 mx-auto mb-4 bg-white/20 dark:bg-white/10 rounded-xl flex items-center justify-center">
+                        <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
                           <img
                             src={skill.image}
                             alt={`${skill.name} logo`}
@@ -213,7 +213,7 @@ function App() {
                         className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
                                   transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
                       >
-                        <div className="w-16 h-16 mx-auto mb-4 bg-white/20 dark:bg-white/10 rounded-xl flex items-center justify-center">
+                        <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
                           <img
                             src={skill.image}
                             alt={`${skill.name} logo`}
@@ -262,7 +262,7 @@ function App() {
                         className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
                                   transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
                       >
-                        <div className="w-16 h-16 mx-auto mb-4 bg-white/20 dark:bg-white/10 rounded-xl flex items-center justify-center">
+                        <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
                           <img
                             src={skill.image}
                             alt={`${skill.name} logo`}
@@ -294,7 +294,7 @@ function App() {
                   className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
                             transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
                 >
-                  <div className="w-16 h-16 mx-auto mb-4 bg-white/20 dark:bg-white/10 rounded-xl flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
                     <img
                       src={skill.image}
                       alt={`${skill.name} logo`}
@@ -338,7 +338,7 @@ function App() {
                         className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
                                   transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
                       >
-                        <div className="w-16 h-16 mx-auto mb-4 bg-white/20 dark:bg-white/10 rounded-xl flex items-center justify-center">
+                        <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
                           <img
                             src={skill.image}
                             alt={`${skill.name} logo`}
@@ -365,7 +365,7 @@ function App() {
                       className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
                                 transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
                     >
-                      <div className="w-16 h-16 mx-auto mb-4 bg-white/20 dark:bg-white/10 rounded-xl flex items-center justify-center">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
                         <img
                           src={skill.image}
                           alt={`${skill.name} logo`}
@@ -415,7 +415,7 @@ function App() {
                         className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
                                   transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
                       >
-                        <div className="w-16 h-16 mx-auto mb-4 bg-white/20 dark:bg-white/10 rounded-xl flex items-center justify-center">
+                        <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
                           <img
                             src={skill.image}
                             alt={`${skill.name} logo`}
@@ -448,7 +448,7 @@ function App() {
                       className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
                                 transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
                     >
-                      <div className="w-16 h-16 mx-auto mb-4 bg-white/20 dark:bg-white/10 rounded-xl flex items-center justify-center">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
                         <img
                           src={skill.image}
                           alt={`${skill.name} logo`}
@@ -566,12 +566,12 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-neutral-dark dark:bg-neutral transition-colors duration-300">
+      <section id="contact" className="py-20 bg-primary-lightest dark:bg-neutral-dark transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 text-center">
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white dark:text-neutral-text mb-12 transition-colors duration-300">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-neutral-text dark:text-white mb-12 transition-colors duration-300">
             Contact
           </h2>
-          <p className="text-2xl sm:text-3xl text-white/70 dark:text-neutral-text/70 mb-16 max-w-4xl mx-auto font-medium leading-relaxed transition-colors duration-300">
+          <p className="text-2xl sm:text-3xl text-neutral-text/70 dark:text-white/70 mb-16 max-w-4xl mx-auto font-medium leading-relaxed transition-colors duration-300">
             Feel free to reach out!
           </p>
           <a 
