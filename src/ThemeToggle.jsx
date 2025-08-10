@@ -15,7 +15,7 @@ const ThemeToggle = () => {
         }`}
       >
         <div className="flex h-full w-full items-center justify-center">
-          {isDark ? (
+          {!isDark ? (
             <svg
               className="h-4 w-4 text-yellow-500"
               fill="currentColor"
