@@ -259,7 +259,7 @@ function App() {
                   <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed flex-grow">
                   A full-stack web application that helps University of Toronto students find off-campus housing quickly and efficiently. Features include real-time filtering, interactive map view, listing previews, walking-time calculations to campus, and automated data collection from multiple rental platforms.
                   </p>
-                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg mt-auto">
+                  <button onClick={() => window.open('https://github.com/HD-Brody/UofT-Housing-Hub', '_blank')} className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg mt-auto">
                     View Project
                   </button>
                 </div>
@@ -280,7 +280,7 @@ function App() {
                   <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed flex-grow">
                     An AI-powered platform that helps users practice workplace conversations such as pitching ideas or negotiating raises. Uses realistic scenario simulations and personalized feedback to improve communication skills. Winner of Best Use of Auth0 at HackThe6ix 2025.
                   </p>
-                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg mt-auto">
+                  <button onClick={() => window.open('https://github.com/VainerAriel/HackThe6ix2025', '_blank')} className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg mt-auto">
                     View Project
                   </button>
                 </div>
@@ -301,7 +301,7 @@ function App() {
                     <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed flex-grow">
                     A high-accuracy digit classification model trained on the MNIST dataset, achieving 98% accuracy with optimized hyperparameters. Features an interactive interface where users can draw numbers for real-time recognition, enhancing usability and engagement.
                   </p>
-                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg mt-auto">
+                  <button onClick={() => window.open('https://github.com/HD-Brody/Digit-Recognition-Neural-Network', '_blank')} className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg mt-auto">
                     View Project
                   </button>
                 </div>
@@ -322,7 +322,7 @@ function App() {
                   <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed flex-grow">
                   A pixel art software that enables users to create detailed pixel art with tools like paint bucket, undo, and layers. Supports exporting artwork as transparent PNG files for seamless integration into other projects.
                   </p>
-                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg mt-auto">
+                  <button onClick={() => window.open('https://github.com/HD-Brody/Pixelize', '_blank')} className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg mt-auto">
                     View Project
                   </button>
                 </div>
