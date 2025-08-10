@@ -9,40 +9,40 @@ function App() {
   return (
     <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+      <nav className="fixed top-0 left-0 right-0 bg-neutral shadow-sm z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-xl text-gray-900">
-              Your Name
+            <div className="font-bold text-xl text-neutral-text">
+              Brody Honigman Deltoff
             </div>
             <div className="hidden md:flex space-x-8">
               <button
                 onClick={() => scrollToSection('hero')}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-neutral-text/70 hover:text-primary transition-colors"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection('about')}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-neutral-text/70 hover:text-primary transition-colors"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection('skills')}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-neutral-text/70 hover:text-primary transition-colors"
               >
                 Skills
               </button>
               <button
                 onClick={() => scrollToSection('projects')}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-neutral-text/70 hover:text-primary transition-colors"
               >
                 Projects
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-neutral-text/70 hover:text-primary transition-colors"
               >
                 Contact
               </button>
@@ -52,17 +52,17 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 pt-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6">
-            Your Name
+      <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-neutral to-primary-light/20 pt-16">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-neutral-text mb-8 leading-none">
+            Hi, I'm Brody
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Full-Stack Developer crafting beautiful digital experiences
+          <p className="text-2xl sm:text-3xl lg:text-4xl text-neutral-text/70 mb-12 max-w-4xl mx-auto font-medium">
+            I'm an aspiring software engineer with a passion for building things.
           </p>
           <button
             onClick={() => scrollToSection('projects')}
-            className="inline-block bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+            className="inline-block bg-primary text-white px-12 py-6 rounded-xl text-xl font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
             View My Work
           </button>
@@ -70,33 +70,32 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">
+      <section id="about" className="py-32 bg-neutral">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+          <h2 className="text-5xl sm:text-6xl lg:text-6xl font-black text-neutral-text text-center mb-20">
             About Me
           </h2>
-          <div className="max-w-3xl mx-auto">
-            <p className="text-lg text-gray-600 mb-8 text-center">
-              I'm a passionate full-stack developer with a love for creating clean, efficient, and user-friendly applications. 
-              With experience in modern web technologies, I enjoy turning complex problems into simple, beautiful solutions.
+          <div className="max-w-5xl mx-auto">
+            <p className="text-2xl sm:text-3xl text-neutral-text/70 mb-16 text-center font-medium leading-relaxed">
+              Hello! I'm currently a student at the University of Toronto, pursuing a Computer Science Specialist.
             </p>
-            <div className="grid sm:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Technical Skills</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• React & Next.js</li>
-                  <li>• JavaScript & TypeScript</li>
-                  <li>• Node.js & Express</li>
-                  <li>• Python & Django</li>
+            <div className="grid sm:grid-cols-2 gap-16">
+              <div className="bg-white/50 p-8 rounded-2xl border-2 border-primary/20">
+                <h3 className="text-3xl font-bold text-neutral-text mb-8">Technical Skills</h3>
+                <ul className="space-y-4 text-xl text-neutral-text/70">
+                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> React & Next.js</li>
+                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> JavaScript & TypeScript</li>
+                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> Node.js & Express</li>
+                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> Python & Django</li>
                 </ul>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Other Skills</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• UI/UX Design</li>
-                  <li>• Database Design</li>
-                  <li>• API Development</li>
-                  <li>• Cloud Deployment</li>
+              <div className="bg-white/50 p-8 rounded-2xl border-2 border-primary/20">
+                <h3 className="text-3xl font-bold text-neutral-text mb-8">Other Skills</h3>
+                <ul className="space-y-4 text-xl text-neutral-text/70">
+                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> UI/UX Design</li>
+                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> Database Design</li>
+                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> API Development</li>
+                  <li className="flex items-center"><span className="text-primary mr-3 text-2xl">▶</span> Cloud Deployment</li>
                 </ul>
               </div>
             </div>
@@ -105,12 +104,12 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">
+      <section id="skills" className="py-32 bg-primary-light/10">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <h2 className="text-5xl sm:text-6xl lg:text-6xl font-black text-neutral-text text-center mb-20">
             Skills & Technologies
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-12">
             {[
               { name: 'React', icon: '⚛️' },
               { name: 'JavaScript', icon: '🟨' },
@@ -119,9 +118,9 @@ function App() {
               { name: 'CSS', icon: '🎨' },
               { name: 'Git', icon: '📋' }
             ].map((skill, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-3xl mb-3">{skill.icon}</div>
-                <h3 className="font-semibold text-gray-900">{skill.name}</h3>
+              <div key={index} className="bg-neutral rounded-2xl p-10 text-center shadow-lg hover:shadow-2xl transition-all hover:scale-110 border-2 border-primary/20 transform">
+                <div className="text-6xl mb-6">{skill.icon}</div>
+                <h3 className="font-bold text-2xl text-neutral-text">{skill.name}</h3>
               </div>
             ))}
           </div>
@@ -129,46 +128,111 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">
-            Featured Projects
+      <section id="projects" className="py-32 bg-neutral">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <h2 className="text-5xl sm:text-6xl lg:text-6xl font-black text-neutral-text text-center mb-20">
+            Projects
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {[1, 2, 3, 4].map((project) => (
-              <div key={project} className="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                <div className="bg-gradient-to-br from-gray-200 to-gray-300 h-48 flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Project Screenshot</span>
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-16">
+              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all hover:scale-105 border-2 border-primary/20 transform">
+                <div className="h-80 overflow-hidden">
+                  <img 
+                    src="/images/uoft-housing-hub.png" 
+                    alt="UofT Housing Hub Screenshot"
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    Project {project}
+                <div className="p-10">
+                  <h3 className="text-3xl font-bold text-neutral-text mb-6">
+                    UofT Housing Hub
                   </h3>
-                  <p className="text-gray-600 mb-4 text-sm">
-                    A brief description of what this project does and the technologies used to build it.
+                  <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed">
+                  A full-stack web application that helps University of Toronto students find off-campus housing quickly and efficiently. Features include real-time filtering, interactive map view, listing previews, walking-time calculations to campus, and automated data collection from multiple rental platforms.
                   </p>
-                  <button className="w-full bg-gray-900 text-white py-2 px-4 rounded-md font-medium hover:bg-gray-800 transition-colors">
+                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg">
                     View Project
                   </button>
                 </div>
               </div>
-            ))}
+
+              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all hover:scale-105 border-2 border-primary/20 transform">
+                <div className="h-80 overflow-hidden">
+                  <img 
+                    src="/images/pitchperfect.png" 
+                    alt="PitchPerfect Screenshot"
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-10">
+                  <h3 className="text-3xl font-bold text-neutral-text mb-6">
+                    PitchPerfect
+                  </h3>
+                  <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed">
+                    An AI-powered platform that helps users practice workplace conversations such as pitching ideas or negotiating raises. Uses realistic scenario simulations and personalized feedback to improve communication skills. Winner of Best Use of Auth0 at HackThe6ix 2025.
+                  </p>
+                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg">
+                    View Project
+                  </button>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all hover:scale-105 border-2 border-primary/20 transform">
+                <div className="h-80 overflow-hidden">
+                  <img 
+                    src="/images/digit-recognition.png" 
+                    alt="Digit Recognition Neural Network Screenshot"
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-10">
+                  <h3 className="text-3xl font-bold text-neutral-text mb-6">
+                    Digit Recognition Neural Network
+                  </h3>
+                    <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed">
+                    A high-accuracy digit classification model trained on the MNIST dataset, achieving 98% accuracy with optimized hyperparameters. Features an interactive interface where users can draw numbers for real-time recognition, enhancing usability and engagement.
+                  </p>
+                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg">
+                    View Project
+                  </button>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all hover:scale-105 border-2 border-primary/20 transform">
+                <div className="h-80 overflow-hidden">
+                  <img 
+                    src="/images/pixelize.png" 
+                    alt="Pixelize Screenshot"
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-10">
+                  <h3 className="text-3xl font-bold text-neutral-text mb-6">
+                    Pixelize
+                  </h3>
+                  <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed">
+                  A pixel art software that enables users to create detailed pixel art with tools like paint bucket, undo, and layers. Supports exporting artwork as transparent PNG files for seamless integration into other projects.
+                  </p>
+                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg">
+                    View Project
+                  </button>
+                </div>
+              </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
-            Let's Work Together
+      <section id="contact" className="py-20 bg-neutral-dark">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 text-center">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-12">
+            Contact
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Have a project in mind? I'd love to hear about it.
+          <p className="text-2xl sm:text-3xl text-white/70 mb-16 max-w-4xl mx-auto font-medium leading-relaxed">
+            Feel free to reach out!
           </p>
           <a 
-            href="mailto:your.email@example.com"
-            className="inline-block bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            href="mailto:0707bhd@gmail.com"
+            className="inline-block bg-primary text-white px-10 py-5 rounded-2xl text-2xl font-bold hover:bg-primary-dark transition-all transform hover:scale-110 shadow-2xl hover:shadow-3xl"
           >
             Get In Touch
           </a>
