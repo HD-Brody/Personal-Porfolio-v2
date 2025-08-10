@@ -1,64 +1,122 @@
 # Personal Portfolio v2
 
-A minimal React + Vite + Tailwind CSS portfolio website.
+A modern, responsive personal portfolio built with React, Vite, and Tailwind CSS. Features a beautiful animated background using Vanta.js and a dark/light theme toggle.
+
+## Features
+
+- 🎨 Modern, responsive design
+- 🌙 Dark/light theme toggle
+- ✨ Animated background with Vanta.js
+- 📱 Mobile-friendly
+- ⚡ Fast loading with Vite
+- 🎯 Smooth scrolling navigation
+- 🖼️ Project showcase with images
+- 📧 Contact section with social links
+
+## Tech Stack
+
+- **Frontend**: React 18, Vite
+- **Styling**: Tailwind CSS
+- **Animations**: Vanta.js, Three.js
+- **Icons**: Custom SVG icons
+- **Fonts**: Inter (Google Fonts)
 
 ## Getting Started
 
+### Prerequisites
+
+- Node.js 18 or higher
+- npm or yarn
+
 ### Installation
 
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd Personal-Porfolio-v2
+```
+
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-### Development
-
-Start the development server:
-
+3. Start the development server:
 ```bash
 npm run dev
 ```
 
-This will start the development server on `http://localhost:5173`
+4. Open your browser and navigate to `http://localhost:5173`
 
-### Build
-
-Build for production:
+### Building for Production
 
 ```bash
 npm run build
 ```
 
-### Preview
+The built files will be in the `dist/` directory.
 
-Preview the production build:
+## Deployment
 
-```bash
-npm run preview
-```
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Vercel will automatically detect the Vite configuration and deploy
+
+The project includes:
+- `vercel.json` - Vercel configuration
+- `.nvmrc` - Node.js version specification
+- Optimized build configuration
+
+### Manual Deployment
+
+1. Build the project: `npm run build`
+2. Upload the contents of the `dist/` folder to your hosting provider
 
 ## Project Structure
 
 ```
 src/
-├── App.jsx      # Main app component with Hero, About, Projects, Contact sections
-├── index.css    # Tailwind CSS imports and base styles
-└── main.jsx     # React app entry point
+├── App.jsx              # Main application component
+├── main.jsx             # Application entry point
+├── index.css            # Global styles
+├── ThemeContext.jsx     # Theme context provider
+├── ThemeToggle.jsx      # Theme toggle component
+└── VantaBackground.jsx  # Animated background component
 ```
 
-## Features
+## Customization
 
-- ⚡ Vite for fast development and building
-- ⚛️ React 18
-- 🎨 Tailwind CSS for styling
-- 📱 Responsive design (mobile-first)
-- 🎯 Clean, minimal structure
-- 🚀 Ready for deployment
+### Adding Projects
 
-## Sections
+Edit the projects array in `src/App.jsx` to add or modify your projects.
 
-- **Hero**: Welcome section with call-to-action
-- **About**: Personal information and skills
-- **Projects**: Portfolio showcase
-- **Contact**: Contact information and links
+### Changing Colors
 
-Each section has distinct background colors for easy layout visualization during development.
+Update the Tailwind configuration in `tailwind.config.js` to customize the color scheme.
+
+### Modifying Content
+
+Update the content in `src/App.jsx` to personalize your portfolio.
+
+## Troubleshooting
+
+### Vercel Deployment Issues
+
+If you encounter build errors on Vercel:
+
+1. Ensure Node.js version is 18 or higher
+2. Check that all dependencies are properly installed
+3. Verify the `vercel.json` configuration
+4. Check the build logs for specific error messages
+
+### Local Development Issues
+
+1. Clear node_modules and reinstall: `rm -rf node_modules && npm install`
+2. Clear Vite cache: `npm run build -- --force`
+3. Check for port conflicts if the dev server won't start
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
