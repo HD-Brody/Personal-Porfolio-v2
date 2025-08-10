@@ -11,6 +11,8 @@ export default {
           DEFAULT: '#6366F1', // indigo-500
           dark: '#4F46E5',    // indigo-600
           light: '#A5B4FC',   // indigo-300
+          lighter: '#E0E7FF',  // indigo-200
+          lightest: '#eff2ffff', // indigo-100
         },
         neutral: {
           DEFAULT: '#F9FAFB', // gray-50

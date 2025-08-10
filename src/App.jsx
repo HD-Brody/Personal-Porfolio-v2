@@ -141,7 +141,7 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-32 bg-primary-light/10">
+      <section id="skills" className="py-32 bg-primary-lightest">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="text-5xl sm:text-6xl lg:text-6xl font-black text-neutral-text text-center mb-20">
             Skills & Technologies
@@ -156,10 +156,10 @@ function App() {
                 style={{ width: 'calc(6 * 10rem + 5 * 0.75rem)' }}
               >
                 {/* Left Gradient Overlay */}
-                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-primary-light/10 to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-primary-lightest to-transparent z-10 pointer-events-none"></div>
 
                 {/* Right Gradient Overlay */}
-                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary-light/10 to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary-lightest to-transparent z-10 pointer-events-none"></div>
 
                 {/* Scrolling Skills Container */}
                 <div className="flex animate-scroll-left hover:pause py-2">
@@ -235,10 +235,10 @@ function App() {
             <div className="flex justify-center">
               <div className="relative overflow-hidden" style={{ width: 'calc(7 * 10rem + 6 * 0.75rem)' }}>
                 {/* Left Gradient Overlay */}
-                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-primary-light/10 to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-primary-lightest to-transparent z-10 pointer-events-none"></div>
                 
                 {/* Right Gradient Overlay */}
-                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary-light/10 to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary-lightest to-transparent z-10 pointer-events-none"></div>
                 
                 {/* Scrolling Skills Container */}
                 <div className="flex animate-scroll-left hover:pause py-2">
@@ -314,10 +314,10 @@ function App() {
             <div className="flex justify-center">
               <div className="relative overflow-hidden" style={{ width: 'calc(2 * 10rem + 1 * 0.75rem)' }}>
                 {/* Left Gradient Overlay */}
-                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-primary-light/10 to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-primary-lightest to-transparent z-10 pointer-events-none"></div>
                 
                 {/* Right Gradient Overlay */}
-                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary-light/10 to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary-lightest to-transparent z-10 pointer-events-none"></div>
                 
                 {/* Scrolling Skills Container */}
                 <div className="flex animate-scroll-left hover:pause py-2">
@@ -384,10 +384,10 @@ function App() {
             <div className="flex justify-center">
               <div className="relative overflow-hidden" style={{ width: 'calc(8 * 10rem + 7 * 0.75rem)' }}>
                 {/* Left Gradient Overlay */}
-                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-primary-light/10 to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-primary-lightest to-transparent z-10 pointer-events-none"></div>
                 
                 {/* Right Gradient Overlay */}
-                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary-light/10 to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary-lightest to-transparent z-10 pointer-events-none"></div>
                 
                 {/* Scrolling Skills Container */}
                 <div className="flex animate-scroll-left hover:pause py-2">
