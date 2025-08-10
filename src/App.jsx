@@ -65,7 +65,7 @@ function App() {
         <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-neutral-text mb-8 leading-none">
             {text}
-            <span className="inline-block w-2 h-20 bg-neutral-text ml-2 animate-pulse"></span>
+            <span className="inline-block w-2 h-20 bg-neutral-text ml-2 animate-blink-delayed"></span>
           </h1>
           <p className="text-2xl sm:text-3xl lg:text-4xl text-neutral-text/70 mb-12 max-w-4xl mx-auto font-medium">
             I'm an aspiring software engineer with a passion for building things.

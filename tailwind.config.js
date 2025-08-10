@@ -18,6 +18,16 @@ export default {
           text: '#1F2937',    // gray-800
         },
       },
+      keyframes: {
+        blink: {
+          '0%, 50%, 100%': { opacity: '1' },
+          '25%, 75%': { opacity: '0' },
+        },
+      },
+      animation: {
+        blink: 'blink 2.5s step-start infinite',
+        'blink-delayed': 'blink 2.5s step-start infinite 2s',
+      },
     },
   },
   plugins: [],
