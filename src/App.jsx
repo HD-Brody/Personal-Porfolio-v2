@@ -77,7 +77,9 @@ function App() {
           </h2>
           <div className="max-w-5xl mx-auto">
             <p className="text-2xl sm:text-3xl text-neutral-text/70 mb-16 text-center font-medium leading-relaxed">
-              Hello! I'm currently a student at the University of Toronto, pursuing a Computer Science Specialist.
+              I'm currently a student at the University of Toronto pursuing a Computer Science Specialist. 
+              I like to build projects where I can mix problem-solving with design, whether that's a web app, a game, or a personal tool.
+              When I'm not coding, I'm usually drawing, playing guitar, or working on something artistic.
             </p>
             <div className="grid sm:grid-cols-2 gap-16">
               <div className="bg-white/50 p-8 rounded-2xl border-2 border-primary/20">
@@ -109,20 +111,128 @@ function App() {
           <h2 className="text-5xl sm:text-6xl lg:text-6xl font-black text-neutral-text text-center mb-20">
             Skills & Technologies
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-12">
-            {[
-              { name: 'React', icon: '⚛️' },
-              { name: 'JavaScript', icon: '🟨' },
-              { name: 'Python', icon: '🐍' },
-              { name: 'Node.js', icon: '🟢' },
-              { name: 'CSS', icon: '🎨' },
-              { name: 'Git', icon: '📋' }
-            ].map((skill, index) => (
-              <div key={index} className="bg-neutral rounded-2xl p-10 text-center shadow-lg hover:shadow-2xl transition-all hover:scale-110 border-2 border-primary/20 transform">
-                <div className="text-6xl mb-6">{skill.icon}</div>
-                <h3 className="font-bold text-2xl text-neutral-text">{skill.name}</h3>
-              </div>
-            ))}
+          
+          {/* Languages */}
+          <div className="mb-20">
+            <h3 className="text-4xl font-bold text-neutral-text text-center mb-12">Languages</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              {[
+                { name: 'Python', image: '/images/python.png' },
+                { name: 'JavaScript', image: '/images/javascript.png' },
+                { name: 'TypeScript', image: '/images/typescript.png' },
+                { name: 'HTML', image: '/images/html.png' },
+                { name: 'CSS', image: '/images/css.png' },
+                { name: 'C#', image: '/images/csharp.png' }
+              ].map((skill, index) => (
+                <div key={index} className="bg-neutral rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all hover:scale-110 border-2 border-primary/20 transform">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-xl flex items-center justify-center">
+                    <img 
+                      src={skill.image} 
+                      alt={`${skill.name} logo`}
+                      className="w-12 h-12 object-contain"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'block';
+                      }}
+                    />
+                    <span className="text-2xl text-neutral-text/50 hidden">🔤</span>
+                  </div>
+                  <h4 className="font-bold text-lg text-neutral-text">{skill.name}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Frameworks & Libraries */}
+          <div className="mb-20">
+            <h3 className="text-4xl font-bold text-neutral-text text-center mb-12">Frameworks & Libraries</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6">
+              {[
+                { name: 'React', image: '/images/react.png' },
+                { name: 'Next.js', image: '/images/nextjs.png' },
+                { name: 'Tailwind CSS', image: '/images/tailwind.png' },
+                { name: 'Flask', image: '/images/flask.png' },
+                { name: 'NumPy', image: '/images/numpy.png' },
+                { name: 'Pandas', image: '/images/pandas.png' },
+                { name: 'Matplotlib', image: '/images/matplotlib.png' }
+              ].map((skill, index) => (
+                <div key={index} className="bg-neutral rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all hover:scale-110 border-2 border-primary/20 transform">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-xl flex items-center justify-center">
+                    <img 
+                      src={skill.image} 
+                      alt={`${skill.name} logo`}
+                      className="w-12 h-12 object-contain"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'block';
+                      }}
+                    />
+                    <span className="text-2xl text-neutral-text/50 hidden">⚙️</span>
+                  </div>
+                  <h4 className="font-bold text-lg text-neutral-text">{skill.name}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Databases */}
+          <div className="mb-20">
+            <h3 className="text-4xl font-bold text-neutral-text text-center mb-12">Databases</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              {[
+                { name: 'SQLite', image: '/images/sqlite.png' },
+                { name: 'MongoDB', image: '/images/mongodb.png' }
+              ].map((skill, index) => (
+                <div key={index} className="bg-neutral rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all hover:scale-110 border-2 border-primary/20 transform">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-xl flex items-center justify-center">
+                    <img 
+                      src={skill.image} 
+                      alt={`${skill.name} logo`}
+                      className="w-12 h-12 object-contain"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'block';
+                      }}
+                    />
+                    <span className="text-2xl text-neutral-text/50 hidden">🗄️</span>
+                  </div>
+                  <h4 className="font-bold text-lg text-neutral-text">{skill.name}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Developer Tools & APIs */}
+          <div>
+            <h3 className="text-4xl font-bold text-neutral-text text-center mb-12">Developer Tools & APIs</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6">
+              {[
+                { name: 'Git & GitHub', image: '/images/git.png' },
+                { name: 'VS Code', image: '/images/vscode.png' },
+                { name: 'Visual Studio', image: '/images/visualstudio.png' },
+                { name: 'PyCharm', image: '/images/pycharm.png' },
+                { name: 'Selenium', image: '/images/selenium.png' },
+                { name: 'ORS API', image: '/images/openrouteservice.png' },
+                { name: 'Gemini API', image: '/images/gemini.png' },
+                { name: 'Auth0', image: '/images/auth0.png' }
+              ].map((skill, index) => (
+                <div key={index} className="bg-neutral rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all hover:scale-110 border-2 border-primary/20 transform">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-xl flex items-center justify-center">
+                    <img 
+                      src={skill.image} 
+                      alt={`${skill.name} logo`}
+                      className="w-12 h-12 object-contain"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'block';
+                      }}
+                    />
+                    <span className="text-2xl text-neutral-text/50 hidden">🛠️</span>
+                  </div>
+                  <h4 className="font-bold text-lg text-neutral-text">{skill.name}</h4>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -134,7 +244,7 @@ function App() {
             Projects
           </h2>
           <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-16">
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all hover:scale-105 border-2 border-primary/20 transform">
+              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all hover:scale-105 border-2 border-primary/20 transform flex flex-col">
                 <div className="h-80 overflow-hidden">
                   <img 
                     src="/images/uoft-housing-hub.png" 
@@ -142,20 +252,20 @@ function App() {
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-10">
+                <div className="p-10 flex flex-col flex-grow">
                   <h3 className="text-3xl font-bold text-neutral-text mb-6">
                     UofT Housing Hub
                   </h3>
-                  <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed">
+                  <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed flex-grow">
                   A full-stack web application that helps University of Toronto students find off-campus housing quickly and efficiently. Features include real-time filtering, interactive map view, listing previews, walking-time calculations to campus, and automated data collection from multiple rental platforms.
                   </p>
-                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg">
+                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg mt-auto">
                     View Project
                   </button>
                 </div>
               </div>
 
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all hover:scale-105 border-2 border-primary/20 transform">
+              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all hover:scale-105 border-2 border-primary/20 transform flex flex-col">
                 <div className="h-80 overflow-hidden">
                   <img 
                     src="/images/pitchperfect.png" 
@@ -163,20 +273,20 @@ function App() {
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-10">
+                <div className="p-10 flex flex-col flex-grow">
                   <h3 className="text-3xl font-bold text-neutral-text mb-6">
                     PitchPerfect
                   </h3>
-                  <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed">
+                  <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed flex-grow">
                     An AI-powered platform that helps users practice workplace conversations such as pitching ideas or negotiating raises. Uses realistic scenario simulations and personalized feedback to improve communication skills. Winner of Best Use of Auth0 at HackThe6ix 2025.
                   </p>
-                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg">
+                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg mt-auto">
                     View Project
                   </button>
                 </div>
               </div>
 
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all hover:scale-105 border-2 border-primary/20 transform">
+              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all hover:scale-105 border-2 border-primary/20 transform flex flex-col">
                 <div className="h-80 overflow-hidden">
                   <img 
                     src="/images/digit-recognition.png" 
@@ -184,20 +294,20 @@ function App() {
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-10">
+                <div className="p-10 flex flex-col flex-grow">
                   <h3 className="text-3xl font-bold text-neutral-text mb-6">
                     Digit Recognition Neural Network
                   </h3>
-                    <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed">
+                    <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed flex-grow">
                     A high-accuracy digit classification model trained on the MNIST dataset, achieving 98% accuracy with optimized hyperparameters. Features an interactive interface where users can draw numbers for real-time recognition, enhancing usability and engagement.
                   </p>
-                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg">
+                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg mt-auto">
                     View Project
                   </button>
                 </div>
               </div>
 
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all hover:scale-105 border-2 border-primary/20 transform">
+              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all hover:scale-105 border-2 border-primary/20 transform flex flex-col">
                 <div className="h-80 overflow-hidden">
                   <img 
                     src="/images/pixelize.png" 
@@ -205,14 +315,14 @@ function App() {
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-10">
+                <div className="p-10 flex flex-col flex-grow">
                   <h3 className="text-3xl font-bold text-neutral-text mb-6">
                     Pixelize
                   </h3>
-                  <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed">
+                  <p className="text-neutral-text/70 mb-8 text-lg leading-relaxed flex-grow">
                   A pixel art software that enables users to create detailed pixel art with tools like paint bucket, undo, and layers. Supports exporting artwork as transparent PNG files for seamless integration into other projects.
                   </p>
-                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg">
+                  <button className="w-full bg-primary text-white py-4 px-6 rounded-xl text-lg font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg mt-auto">
                     View Project
                   </button>
                 </div>
