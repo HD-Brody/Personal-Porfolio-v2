@@ -25,4 +25,8 @@
   .animate-scroll-left {
     animation: scroll-left 20s linear infinite;
   }
+  
+  .animate-scroll-left:hover {
+    animation-play-state: paused;
+  }
 }

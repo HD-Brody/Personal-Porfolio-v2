@@ -149,7 +149,7 @@ function App() {
                 <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary-light/10 to-transparent z-10 pointer-events-none"></div>
                 
                 {/* Scrolling Skills Container */}
-                <div className="flex animate-scroll-left">
+                <div className="flex animate-scroll-left hover:pause py-2">
                   {/* First set of skills */}
                   {[
                     { name: 'Python', image: '/images/python.png' },
@@ -222,7 +222,7 @@ function App() {
                 <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary-light/10 to-transparent z-10 pointer-events-none"></div>
                 
                 {/* Scrolling Skills Container */}
-                <div className="flex animate-scroll-left">
+                <div className="flex animate-scroll-left hover:pause py-2">
                   {/* First set of skills */}
                   {[
                     { name: 'React', image: '/images/react.png' },
@@ -297,7 +297,7 @@ function App() {
                 <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary-light/10 to-transparent z-10 pointer-events-none"></div>
                 
                 {/* Scrolling Skills Container */}
-                <div className="flex animate-scroll-left">
+                <div className="flex animate-scroll-left hover:pause py-2">
                   {/* First set of skills */}
                   {[
                     { name: 'SQLite', image: '/images/sqlite.png' },
@@ -362,7 +362,7 @@ function App() {
                 <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary-light/10 to-transparent z-10 pointer-events-none"></div>
                 
                 {/* Scrolling Skills Container */}
-                <div className="flex animate-scroll-left">
+                <div className="flex animate-scroll-left hover:pause py-2">
                   {/* First set of skills */}
                   {[
                     { name: 'Git & GitHub', image: '/images/git.png' },
