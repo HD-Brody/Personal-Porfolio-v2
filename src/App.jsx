@@ -109,7 +109,7 @@ function App() {
               <div className="space-y-6">
                 <div className="space-y-5">
                   <p className="text-lg lg:text-xl text-neutral-text/80 dark:text-white/80 leading-relaxed font-medium transition-colors duration-300">
-                    I'm currently a student at the University of Toronto pursuing a Computer Science Specialist.
+                    I'm currently a student at the University of Toronto pursuing a Computer Science Specialist program.
                     I love creating projects that combine design with functionality, whether that's
                     a web application, a game, or a small tool that makes life a bit easier.
                   </p>
