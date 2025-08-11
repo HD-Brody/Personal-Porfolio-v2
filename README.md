@@ -1,27 +1,30 @@
 # Personal Portfolio v2
 
-A modern, responsive personal portfolio built with React, Vite, and Tailwind CSS. Features a beautiful animated background using Vanta.js and a dark/light theme toggle.
+A modern, responsive personal portfolio showcasing my projects and skills. Built with React, Vite, and Tailwind CSS featuring beautiful animations and a dark/light theme toggle.
 
-## Features
+**🌐 Live Demo:** [brodyhd.me](https://brodyhd.me)
 
-- 🎨 Modern, responsive design
+## ✨ Features
+
+- 🎨 Modern, responsive design with smooth animations
 - 🌙 Dark/light theme toggle
-- ✨ Animated background with Vanta.js
-- 📱 Mobile-friendly
+- ✨ Animated background using Vanta.js and Three.js
+- 📱 Fully mobile-responsive
 - ⚡ Fast loading with Vite
 - 🎯 Smooth scrolling navigation
-- 🖼️ Project showcase with images
+- 🖼️ Project showcase with interactive cards
 - 📧 Contact section with social links
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - **Frontend**: React 18, Vite
 - **Styling**: Tailwind CSS
 - **Animations**: Vanta.js, Three.js
+- **Typewriter Effect**: react-simple-typewriter
 - **Icons**: Custom SVG icons
 - **Fonts**: Inter (Google Fonts)
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -54,27 +57,7 @@ npm run dev
 npm run build
 ```
 
-The built files will be in the `dist/` directory.
-
-## Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Vercel will automatically detect the Vite configuration and deploy
-
-The project includes:
-- `vercel.json` - Vercel configuration
-- `.nvmrc` - Node.js version specification
-- Optimized build configuration
-
-### Manual Deployment
-
-1. Build the project: `npm run build`
-2. Upload the contents of the `dist/` folder to your hosting provider
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 src/
@@ -86,37 +69,10 @@ src/
 └── VantaBackground.jsx  # Animated background component
 ```
 
-## Customization
+## 🎯 Projects Showcased
 
-### Adding Projects
+- **UofT Housing Hub** - Full-stack web app for finding off-campus housing
+- **PitchPerfect** - AI-powered workplace conversation practice platform
+- **Digit Recognition Neural Network** - High-accuracy MNIST classifier (98% accuracy)
+- **Pixelize** - Pixel art creation software with advanced tools
 
-Edit the projects array in `src/App.jsx` to add or modify your projects.
-
-### Changing Colors
-
-Update the Tailwind configuration in `tailwind.config.js` to customize the color scheme.
-
-### Modifying Content
-
-Update the content in `src/App.jsx` to personalize your portfolio.
-
-## Troubleshooting
-
-### Vercel Deployment Issues
-
-If you encounter build errors on Vercel:
-
-1. Ensure Node.js version is 18 or higher
-2. Check that all dependencies are properly installed
-3. Verify the `vercel.json` configuration
-4. Check the build logs for specific error messages
-
-### Local Development Issues
-
-1. Clear node_modules and reinstall: `rm -rf node_modules && npm install`
-2. Clear Vite cache: `npm run build -- --force`
-3. Check for port conflicts if the dev server won't start
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
