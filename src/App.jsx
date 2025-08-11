@@ -1,5 +1,6 @@
 import { useTypewriter } from 'react-simple-typewriter';
 import ThemeToggle from './ThemeToggle';
+import VantaBackground from './VantaBackground';
 
 function App() {
   const scrollToSection = (sectionId) => {
@@ -66,22 +67,24 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-neutral dark:bg-neutral-dark">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10 flex flex-col items-center justify-center min-h-screen">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-neutral-text dark:text-white mb-8 leading-none transition-colors duration-300">
-            {text}
-            <span className="inline-block w-2 h-20 bg-neutral-text ml-2 animate-blink-delayed"></span>
-          </h1>
-          <p className="text-2xl sm:text-3xl lg:text-4xl text-neutral-text/80 dark:text-white/80 mb-12 max-w-4xl mx-auto font-medium transition-colors duration-300">
-            I'm an aspiring software engineer with a passion for building things.
-          </p>
-          <button
-            onClick={() => scrollToSection('projects')}
-            className="inline-block bg-primary text-white px-12 py-6 rounded-xl text-xl font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
-          >
-            View My Work
-          </button>
-        </div>
+      <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <VantaBackground>
+          <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10 flex flex-col items-center justify-center min-h-screen">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-neutral-text dark:text-white mb-8 leading-none transition-colors duration-300">
+              {text}
+              <span className="inline-block w-2 h-20 bg-neutral-text ml-2 animate-blink-delayed"></span>
+            </h1>
+            <p className="text-2xl sm:text-3xl lg:text-4xl text-neutral-text/80 dark:text-white/80 mb-12 max-w-4xl mx-auto font-medium transition-colors duration-300">
+              I'm an aspiring software engineer with a passion for building things.
+            </p>
+            <button
+              onClick={() => scrollToSection('projects')}
+              className="inline-block bg-primary text-white px-12 py-6 rounded-xl text-xl font-bold hover:bg-primary-dark transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              View My Work
+            </button>
+          </div>
+        </VantaBackground>
       </section>
 
       {/* About Section */}
