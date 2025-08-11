@@ -72,7 +72,7 @@ function App() {
           <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10 flex flex-col items-center justify-center min-h-screen">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-neutral-text dark:text-white mb-8 leading-none transition-colors duration-300">
               {text}
-              <span className="inline-block w-2 h-20 bg-neutral-text ml-2 animate-blink-delayed"></span>
+              <span className="inline-block w-2 h-20 bg-neutral-text dark:bg-white ml-2 animate-blink-delayed"></span>
             </h1>
             <p className="text-2xl sm:text-3xl lg:text-4xl text-neutral-text/80 dark:text-white/80 mb-12 max-w-4xl mx-auto font-medium transition-colors duration-300">
               I'm an aspiring software engineer with a passion for building things.
