@@ -15,12 +15,14 @@ const InfiniteScrollCarousel = ({
   const [isDragging, setIsDragging] = useState(false);
   const [dragStartX, setDragStartX] = useState(0);
   const [dragStartPosition, setDragStartPosition] = useState(0);
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [cardWidth, setCardWidth] = useState(0);
 
   // For momentum
   const lastXRef = useRef(0);
   const velocityRef = useRef(0);
+
+  // Track individual set positions - each set resets independently
+  const [setPositions, setSetPositions] = useState([0, 0, 0, 0]);
 
   // Calculate card width
   useEffect(() => {
@@ -41,14 +43,23 @@ const InfiniteScrollCarousel = ({
   // Animation loop
   const animate = useCallback(() => {
     if (!isPaused && !isDragging) {
-      setScrollPosition(prev => {
-        const newPosition = prev + scrollSpeed;
+      setSetPositions(prev => {
         const totalWidth = items.length * cardWidth;
-
-        if (newPosition >= totalWidth) return newPosition - totalWidth;
-        if (newPosition < 0) return newPosition + totalWidth;
-
-        return newPosition;
+        const newPositions = prev.map(pos => pos + scrollSpeed);
+        
+        // Each set resets independently when it goes off-screen
+        return newPositions.map((pos, index) => {
+          // Calculate the actual position of this set in the concatenated array
+          const setStartPosition = index * totalWidth;
+          const actualPosition = setStartPosition + pos;
+          
+          // If this set has moved completely off-screen, reset it to the end
+          if (actualPosition <= -totalWidth) {
+            return pos + totalWidth * 4; // Move it to the end of all 4 sets
+          }
+          
+          return pos;
+        });
       });
 
       // Gradually ease velocity back to base speed
@@ -69,10 +80,10 @@ const InfiniteScrollCarousel = ({
   const handleMouseDown = useCallback((e) => {
     setIsDragging(true);
     setDragStartX(e.clientX);
-    setDragStartPosition(scrollPosition);
+    setDragStartPosition(setPositions[0]); // Use first set as reference
     lastXRef.current = e.clientX;
     velocityRef.current = 0;
-  }, [scrollPosition]);
+  }, [setPositions]);
 
   // Mouse drag move
   const handleMouseMove = useCallback((e) => {
@@ -81,10 +92,31 @@ const InfiniteScrollCarousel = ({
       const totalWidth = items.length * cardWidth;
       let newPosition = dragStartPosition + dragDistance;
 
-      if (newPosition < 0) newPosition = totalWidth + (newPosition % totalWidth);
-      else if (newPosition >= totalWidth) newPosition = newPosition % totalWidth;
-
-      setScrollPosition(newPosition);
+      // Update all set positions based on the drag
+      setSetPositions(prev => {
+        const offset = newPosition - prev[0];
+        return prev.map((pos, index) => {
+          let newPos = pos + offset;
+          
+          // Handle wrapping for each set individually
+          if (newPos < 0) {
+            newPos = totalWidth + (newPos % totalWidth);
+          } else if (newPos >= totalWidth) {
+            newPos = newPos % totalWidth;
+          }
+          
+          // Defensive check: ensure sets stay within reasonable bounds
+          const setStartPosition = index * totalWidth;
+          const actualPosition = setStartPosition + newPos;
+          
+          // If a set has moved too far off-screen, reset it to the end
+          if (actualPosition <= -totalWidth * 2) {
+            newPos = newPos + totalWidth * 4;
+          }
+          
+          return newPos;
+        });
+      });
 
       // Track velocity
       velocityRef.current = e.clientX - lastXRef.current;
@@ -111,23 +143,24 @@ const InfiniteScrollCarousel = ({
       <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-neutral dark:from-neutral-dark to-transparent z-10 pointer-events-none"></div>
       <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-neutral dark:from-neutral-dark to-transparent z-10 pointer-events-none"></div>
 
-      <div
-        ref={containerRef}
-        className="flex py-2 cursor-grab active:cursor-grabbing select-none"
-        style={{
-          transform: `translateX(-${scrollPosition}px)`,
-          transition: isDragging ? 'none' : 'transform 0.05s ease-out'
-        }}
-                 onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={(e) => {
-            if (isDragging) {
-              handleMouseUp();
-            }
-          }}
-      >
-        {items.concat(items).map((item, index) => (
+             <div
+         ref={containerRef}
+         className="flex py-2 cursor-grab active:cursor-grabbing select-none"
+         style={{
+           transform: `translateX(-${setPositions[0]}px)`,
+           transition: isDragging ? 'none' : 'transform 0.05s ease-out'
+         }}
+         onMouseDown={handleMouseDown}
+         onMouseMove={handleMouseMove}
+         onMouseUp={handleMouseUp}
+         onMouseLeave={(e) => {
+           if (isDragging) {
+             handleMouseUp();
+           }
+         }}
+       >
+         {/* Create 4 sets of items for truly seamless infinite scroll */}
+         {items.concat(items).concat(items).concat(items).map((item, index) => (
           <div
             key={index}
             className={`carousel-card flex-shrink-0 mx-3 ${cardClassName}`}
