@@ -1,6 +1,7 @@
 import { useTypewriter } from 'react-simple-typewriter';
 import ThemeToggle from './ThemeToggle';
 import VantaBackground from './VantaBackground';
+import InfiniteScrollCarousel from './InfiniteScrollCarousel';
 
 function App() {
   const scrollToSection = (sectionId) => {
@@ -159,80 +160,36 @@ function App() {
           <div className="mb-20">
             <h3 className="text-4xl font-bold text-neutral-text dark:text-white text-center mb-12 transition-colors duration-300">Languages</h3>
             <div className="flex justify-center">
-              <div
-                className="relative overflow-hidden"
-                style={{ width: 'calc(6 * 10rem + 5 * 0.75rem)' }}
-              >
-                {/* Left Gradient Overlay */}
-                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-neutral dark:from-neutral-dark to-transparent z-10 pointer-events-none"></div>
-
-                {/* Right Gradient Overlay */}
-                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-neutral dark:from-neutral-dark to-transparent z-10 pointer-events-none"></div>
-
-                {/* Scrolling Skills Container */}
-                <div className="flex animate-scroll-left hover:pause py-2">
-                  {/* First set of skills */}
-                  {[
+              <div style={{ width: 'calc(6 * 10rem + 5 * 0.75rem)' }}>
+                <InfiniteScrollCarousel
+                  items={[
                     { name: 'Python', image: '/images/python.png' },
                     { name: 'JavaScript', image: '/images/javascript.png' },
                     { name: 'TypeScript', image: '/images/typescript.png' },
                     { name: 'HTML', image: '/images/html.png' },
                     { name: 'CSS', image: '/images/css.png' },
                     { name: 'C#', image: '/images/csharp.png' }
-                  ].map((skill, index) => (
-                    <div key={index} className="flex-shrink-0 mx-3 first:ml-0 last:mr-0">
-                      <div
-                        className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
-                                  transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                      >
-                        <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
-                          <img
-                            src={skill.image}
-                            alt={`${skill.name} logo`}
-                            className="w-12 h-12 object-contain"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                              e.target.nextSibling.style.display = 'block';
-                            }}
-                          />
-                          <span className="text-2xl text-neutral-text/50 dark:text-white/50 hidden">🔤</span>
-                        </div>
-                        <h4 className="font-bold text-lg text-neutral-text dark:text-white transition-colors duration-300">{skill.name}</h4>
+                  ]}
+                  baseSpeed={1}
+                  cardClassName="w-40 h-40"
+                  cardContent={(skill) => (
+                    <div className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform flex flex-col items-center justify-center transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
+                        <img
+                          src={skill.image}
+                          alt={`${skill.name} logo`}
+                          className="w-12 h-12 object-contain"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.nextSibling.style.display = 'block';
+                          }}
+                        />
+                        <span className="text-2xl text-neutral-text/50 dark:text-white/50 hidden">🔤</span>
                       </div>
+                      <h4 className="font-bold text-lg text-neutral-text dark:text-white transition-colors duration-300">{skill.name}</h4>
                     </div>
-                  ))}
-
-                  {/* Duplicate set for seamless loop */}
-                  {[
-                    { name: 'Python', image: '/images/python.png' },
-                    { name: 'JavaScript', image: '/images/javascript.png' },
-                    { name: 'TypeScript', image: '/images/typescript.png' },
-                    { name: 'HTML', image: '/images/html.png' },
-                    { name: 'CSS', image: '/images/css.png' },
-                    { name: 'C#', image: '/images/csharp.png' }
-                  ].map((skill, index) => (
-                    <div key={index} className="flex-shrink-0 mx-3 first:ml-0 last:mr-0">
-                      <div
-                        className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
-                                  transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                      >
-                        <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
-                          <img
-                            src={skill.image}
-                            alt={`${skill.name} logo`}
-                            className="w-12 h-12 object-contain"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                              e.target.nextSibling.style.display = 'block';
-                            }}
-                          />
-                          <span className="text-2xl text-neutral-text/50 dark:text-white/50 hidden">🔤</span>
-                        </div>
-                        <h4 className="font-bold text-lg text-neutral-text dark:text-white transition-colors duration-300">{skill.name}</h4>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                  )}
+                />
               </div>
             </div>
           </div>
@@ -241,79 +198,37 @@ function App() {
           <div className="mb-20">
             <h3 className="text-4xl font-bold text-neutral-text dark:text-white text-center mb-12 transition-colors duration-300">Frameworks & Libraries</h3>
             <div className="flex justify-center">
-              <div className="relative overflow-hidden" style={{ width: 'calc(7 * 10rem + 6 * 0.75rem)' }}>
-                {/* Left Gradient Overlay */}
-                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-neutral dark:from-neutral-dark to-transparent z-10 pointer-events-none"></div>
-                
-                {/* Right Gradient Overlay */}
-                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-neutral dark:from-neutral-dark to-transparent z-10 pointer-events-none"></div>
-                
-                {/* Scrolling Skills Container */}
-                <div className="flex animate-scroll-left hover:pause py-2">
-                  {/* First set of skills */}
-                  {[
+              <div style={{ width: 'calc(7 * 10rem + 6 * 0.75rem)' }}>
+                <InfiniteScrollCarousel
+                  items={[
                     { name: 'React', image: '/images/react.png' },
                     { name: 'Next.js', image: '/images/nextjs.png' },
-                    { name: 'Tailwind CSS', image: '/images/tailwind.png' },
+                    { name: 'Tailwind', image: '/images/tailwind.png' },
                     { name: 'Flask', image: '/images/flask.png' },
                     { name: 'NumPy', image: '/images/numpy.png' },
                     { name: 'Pandas', image: '/images/pandas.png' },
                     { name: 'Matplotlib', image: '/images/matplotlib.png' }
-                  ].map((skill, index) => (
-                    <div key={index} className="flex-shrink-0 mx-3 first:ml-0 last:mr-0">
-                      <div
-                        className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
-                                  transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                      >
-                        <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
-                          <img
-                            src={skill.image}
-                            alt={`${skill.name} logo`}
-                            className="w-12 h-12 object-contain"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                              e.target.nextSibling.style.display = 'block';
-                            }}
-                          />
-                          <span className="text-2xl text-neutral-text/50 dark:text-white/50 hidden">🔤</span>
-                        </div>
-                        <h4 className="font-bold text-lg text-neutral-text dark:text-white transition-colors duration-300">{skill.name}</h4>
+                  ]}
+                  baseSpeed={1}
+                  cardClassName="w-40 h-40"
+                  cardContent={(skill) => (
+                    <div className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform flex flex-col items-center justify-center transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
+                        <img
+                          src={skill.image}
+                          alt={`${skill.name} logo`}
+                          className="w-12 h-12 object-contain"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.nextSibling.style.display = 'block';
+                          }}
+                        />
+                        <span className="text-2xl text-neutral-text/50 dark:text-white/50 hidden">🔤</span>
                       </div>
+                      <h4 className="font-bold text-lg text-neutral-text dark:text-white transition-colors duration-300">{skill.name}</h4>
                     </div>
-                  ))}
-                  
-                  {/* Duplicate set for seamless loop */}
-              {[
-                { name: 'React', image: '/images/react.png' },
-                { name: 'Next.js', image: '/images/nextjs.png' },
-                { name: 'Tailwind CSS', image: '/images/tailwind.png' },
-                { name: 'Flask', image: '/images/flask.png' },
-                { name: 'NumPy', image: '/images/numpy.png' },
-                { name: 'Pandas', image: '/images/pandas.png' },
-                { name: 'Matplotlib', image: '/images/matplotlib.png' }
-              ].map((skill, index) => (
-                <div key={index} className="flex-shrink-0 mx-3 first:ml-0 last:mr-0">
-                <div
-                  className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
-                            transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                >
-                  <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
-                    <img
-                      src={skill.image}
-                      alt={`${skill.name} logo`}
-                      className="w-12 h-12 object-contain"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'block';
-                      }}
-                    />
-                    <span className="text-2xl text-neutral-text/50 dark:text-white/50 hidden">🔤</span>
-                  </div>
-                  <h4 className="font-bold text-lg text-neutral-text dark:text-white transition-colors duration-300">{skill.name}</h4>
-                </div>
-              </div>
-              ))}
-                </div>
+                  )}
+                />
               </div>
             </div>
           </div>
@@ -322,52 +237,16 @@ function App() {
           <div className="mb-20">
             <h3 className="text-4xl font-bold text-neutral-text dark:text-white text-center mb-12">Databases</h3>
             <div className="flex justify-center">
-              <div className="relative overflow-hidden" style={{ width: 'calc(2 * 10rem + 1 * 0.75rem)' }}>
-                {/* Left Gradient Overlay */}
-                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-neutral dark:from-neutral-dark to-transparent z-10 pointer-events-none"></div>
-                
-                {/* Right Gradient Overlay */}
-                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-neutral dark:from-neutral-dark to-transparent z-10 pointer-events-none"></div>
-                
-                {/* Scrolling Skills Container */}
-                <div className="flex animate-scroll-left hover:pause py-2">
-                  {/* First set of skills */}
-                  {[
+              <div style={{ width: 'calc(2 * 10rem + 1 * 0.75rem)' }}>
+                <InfiniteScrollCarousel
+                  items={[
                     { name: 'SQLite', image: '/images/sqlite.png' },
                     { name: 'MongoDB', image: '/images/mongodb.png' }
-                  ].map((skill, index) => (
-                    <div key={index} className="flex-shrink-0 mx-3 first:ml-0 last:mr-0">
-                      <div
-                        className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
-                                  transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                      >
-                        <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
-                          <img
-                            src={skill.image}
-                            alt={`${skill.name} logo`}
-                            className="w-12 h-12 object-contain"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                              e.target.nextSibling.style.display = 'block';
-                            }}
-                          />
-                          <span className="text-2xl text-neutral-text/50 dark:text-white/50 hidden">🔤</span>
-                        </div>
-                        <h4 className="font-bold text-lg text-neutral-text dark:text-white transition-colors duration-300">{skill.name}</h4>
-                      </div>
-                    </div>
-                  ))}
-                  
-                  {/* Duplicate set for seamless loop */}
-              {[
-                { name: 'SQLite', image: '/images/sqlite.png' },
-                { name: 'MongoDB', image: '/images/mongodb.png' }
-              ].map((skill, index) => (
-                  <div key={index} className="flex-shrink-0 mx-3 first:ml-0 last:mr-0">
-                    <div
-                      className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
-                                transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                    >
+                  ]}
+                  baseSpeed={1}
+                  cardClassName="w-40 h-40"
+                  cardContent={(skill) => (
+                    <div className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform flex flex-col items-center justify-center transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg">
                       <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
                         <img
                           src={skill.image}
@@ -382,9 +261,8 @@ function App() {
                       </div>
                       <h4 className="font-bold text-lg text-neutral-text dark:text-white transition-colors duration-300">{skill.name}</h4>
                     </div>
-                  </div>
-              ))}
-                </div>
+                  )}
+                />
               </div>
             </div>
           </div>
@@ -393,64 +271,22 @@ function App() {
           <div>
             <h3 className="text-4xl font-bold text-neutral-text dark:text-white text-center mb-12">Developer Tools & APIs</h3>
             <div className="flex justify-center">
-              <div className="relative overflow-hidden" style={{ width: 'calc(8 * 10rem + 7 * 0.75rem)' }}>
-                {/* Left Gradient Overlay */}
-                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-neutral dark:from-neutral-dark to-transparent z-10 pointer-events-none"></div>
-                
-                {/* Right Gradient Overlay */}
-                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-neutral dark:from-neutral-dark to-transparent z-10 pointer-events-none"></div>
-                
-                {/* Scrolling Skills Container */}
-                <div className="flex animate-scroll-left hover:pause py-2">
-                  {/* First set of skills */}
-                  {[
+              <div style={{ width: 'calc(8 * 10rem + 7 * 0.75rem)' }}>
+                <InfiniteScrollCarousel
+                  items={[
                     { name: 'Git & GitHub', image: '/images/git.png' },
                     { name: 'VS Code', image: '/images/vscode.png' },
-                    { name: 'Visual Studio', image: '/images/visualstudio.png' },
+                    { name: 'VS', image: '/images/visualstudio.png' },
                     { name: 'PyCharm', image: '/images/pycharm.png' },
                     { name: 'Selenium', image: '/images/selenium.png' },
                     { name: 'ORS API', image: '/images/openrouteservice.png' },
                     { name: 'Gemini API', image: '/images/gemini.png' },
                     { name: 'Auth0', image: '/images/auth0.png' }
-                  ].map((skill, index) => (
-                    <div key={index} className="flex-shrink-0 mx-3 first:ml-0 last:mr-0">
-                      <div
-                        className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
-                                  transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                      >
-                        <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
-                          <img
-                            src={skill.image}
-                            alt={`${skill.name} logo`}
-                            className="w-12 h-12 object-contain"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                              e.target.nextSibling.style.display = 'block';
-                            }}
-                          />
-                          <span className="text-2xl text-neutral-text/50 dark:text-white/50 hidden">🔤</span>
-                        </div>
-                        <h4 className="font-bold text-lg text-neutral-text dark:text-white transition-colors duration-300">{skill.name}</h4>
-                      </div>
-                    </div>
-                  ))}
-                  
-                  {/* Duplicate set for seamless loop */}
-              {[
-                { name: 'Git & GitHub', image: '/images/git.png' },
-                { name: 'VS Code', image: '/images/vscode.png' },
-                { name: 'Visual Studio', image: '/images/visualstudio.png' },
-                { name: 'PyCharm', image: '/images/pycharm.png' },
-                { name: 'Selenium', image: '/images/selenium.png' },
-                { name: 'ORS API', image: '/images/openrouteservice.png' },
-                { name: 'Gemini API', image: '/images/gemini.png' },
-                { name: 'Auth0', image: '/images/auth0.png' }
-              ].map((skill, index) => (
-                  <div key={index} className="flex-shrink-0 mx-3 first:ml-0 last:mr-0">
-                    <div
-                      className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform w-40 h-40 flex flex-col items-center justify-center
-                                transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                    >
+                  ]}
+                  baseSpeed={1}
+                  cardClassName="w-40 h-40"
+                  cardContent={(skill) => (
+                    <div className="bg-neutral dark:bg-neutral-dark rounded-2xl p-6 text-center shadow-sm border-2 border-primary/20 dark:border-primary/30 transform flex flex-col items-center justify-center transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg">
                       <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-white rounded-xl flex items-center justify-center">
                         <img
                           src={skill.image}
@@ -465,9 +301,8 @@ function App() {
                       </div>
                       <h4 className="font-bold text-lg text-neutral-text dark:text-white transition-colors duration-300">{skill.name}</h4>
                     </div>
-                  </div>
-              ))}
-                </div>
+                  )}
+                />
               </div>
             </div>
           </div>
