@@ -119,8 +119,13 @@ const InfiniteScrollCarousel = ({
           transition: isDragging ? 'none' : 'transform 0.05s ease-out'
         }}
                  onMouseDown={handleMouseDown}
-         onMouseMove={handleMouseMove}
-         onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={(e) => {
+            if (isDragging) {
+              handleMouseUp();
+            }
+          }}
       >
         {items.concat(items).map((item, index) => (
           <div
