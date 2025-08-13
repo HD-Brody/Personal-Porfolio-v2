@@ -9,29 +9,32 @@ const InfiniteScrollCarousel = ({
 }) => {
   const containerRef = useRef(null);
   const animationRef = useRef(null);
+  const positionRef = useRef(0);
+  const speedRef = useRef(baseSpeed);
 
-  const [scrollSpeed, setScrollSpeed] = useState(baseSpeed);
-  const [isPaused, setIsPaused] = useState(false);
+  const [itemsWidth, setItemsWidth] = useState(0);
+
   const [isDragging, setIsDragging] = useState(false);
-  const [dragStartX, setDragStartX] = useState(0);
-  const [dragStartPosition, setDragStartPosition] = useState(0);
-  const [cardWidth, setCardWidth] = useState(0);
-
-  // For momentum
-  const lastXRef = useRef(0);
+  const dragStartXRef = useRef(0);
+  const dragStartPositionRef = useRef(0);
   const velocityRef = useRef(0);
+  const lastXRef = useRef(0);
 
-  // Track individual set positions - each set resets independently
-  const [setPositions, setSetPositions] = useState([0, 0, 0, 0]);
-
-  // Calculate card width
+  // Calculate the total width of the original items
   useEffect(() => {
     const updateDimensions = () => {
       if (containerRef.current) {
         const firstCard = containerRef.current.querySelector('.carousel-card');
         if (firstCard) {
-          const cardRect = firstCard.getBoundingClientRect();
-          setCardWidth(cardRect.width + 24); // margin
+          const allCards = containerRef.current.querySelectorAll('.carousel-card');
+          // Sum the width of a single set of cards
+          let width = 0;
+          for (let i = 0; i < items.length; i++) {
+            width += allCards[i].offsetWidth;
+            const style = window.getComputedStyle(allCards[i]);
+            width += parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+          }
+          setItemsWidth(width);
         }
       }
     };
@@ -42,34 +45,26 @@ const InfiniteScrollCarousel = ({
 
   // Animation loop
   const animate = useCallback(() => {
-    if (!isPaused && !isDragging) {
-      setSetPositions(prev => {
-        const totalWidth = items.length * cardWidth;
-        const newPositions = prev.map(pos => pos + scrollSpeed);
-        
-        // Each set resets independently when it goes off-screen
-        return newPositions.map((pos, index) => {
-          // Calculate the actual position of this set in the concatenated array
-          const setStartPosition = index * totalWidth;
-          const actualPosition = setStartPosition + pos;
-          
-          // If this set has moved completely off-screen, reset it to the end
-          if (actualPosition <= -totalWidth) {
-            return pos + totalWidth * 4; // Move it to the end of all 4 sets
-          }
-          
-          return pos;
-        });
-      });
+    if (!isDragging) {
+      positionRef.current += speedRef.current;
 
-      // Gradually ease velocity back to base speed
-      if (Math.abs(scrollSpeed - baseSpeed) > 0.01) {
-        setScrollSpeed(prev => prev * 0.95 + baseSpeed * 0.05); // easing
+      // Reset the position for a seamless loop
+      if (positionRef.current >= itemsWidth) {
+        positionRef.current -= itemsWidth;
+      } else if (positionRef.current < 0) {
+        positionRef.current += itemsWidth;
       }
+      
+      // Gradually ease speed back to base speed
+      if (Math.abs(speedRef.current - baseSpeed) > 0.01) {
+        speedRef.current = speedRef.current * 0.95 + baseSpeed * 0.05;
+      }
+
+      containerRef.current.style.transform = `translateX(-${positionRef.current}px)`;
     }
 
     animationRef.current = requestAnimationFrame(animate);
-  }, [isPaused, isDragging, scrollSpeed, items.length, cardWidth, baseSpeed]);
+  }, [isDragging, itemsWidth, baseSpeed]);
 
   useEffect(() => {
     animationRef.current = requestAnimationFrame(animate);
@@ -79,63 +74,40 @@ const InfiniteScrollCarousel = ({
   // Mouse drag start
   const handleMouseDown = useCallback((e) => {
     setIsDragging(true);
-    setDragStartX(e.clientX);
-    setDragStartPosition(setPositions[0]); // Use first set as reference
+    dragStartXRef.current = e.clientX;
+    dragStartPositionRef.current = positionRef.current;
     lastXRef.current = e.clientX;
     velocityRef.current = 0;
-  }, [setPositions]);
+    containerRef.current.style.transition = 'none'; // Disable transition for dragging
+  }, []);
 
   // Mouse drag move
   const handleMouseMove = useCallback((e) => {
     if (isDragging) {
-      const dragDistance = dragStartX - e.clientX;
-      const totalWidth = items.length * cardWidth;
-      let newPosition = dragStartPosition + dragDistance;
-
-      // Update all set positions based on the drag
-      setSetPositions(prev => {
-        const offset = newPosition - prev[0];
-        return prev.map((pos, index) => {
-          let newPos = pos + offset;
-          
-          // Handle wrapping for each set individually
-          if (newPos < 0) {
-            newPos = totalWidth + (newPos % totalWidth);
-          } else if (newPos >= totalWidth) {
-            newPos = newPos % totalWidth;
-          }
-          
-          // Defensive check: ensure sets stay within reasonable bounds
-          const setStartPosition = index * totalWidth;
-          const actualPosition = setStartPosition + newPos;
-          
-          // If a set has moved too far off-screen, reset it to the end
-          if (actualPosition <= -totalWidth * 2) {
-            newPos = newPos + totalWidth * 4;
-          }
-          
-          return newPos;
-        });
-      });
+      const dragDistance = e.clientX - dragStartXRef.current;
+      positionRef.current = dragStartPositionRef.current - dragDistance;
+      
+      // Update the DOM directly for smooth dragging
+      containerRef.current.style.transform = `translateX(-${positionRef.current}px)`;
 
       // Track velocity
       velocityRef.current = e.clientX - lastXRef.current;
       lastXRef.current = e.clientX;
     }
-  }, [isDragging, dragStartX, dragStartPosition, items.length, cardWidth]);
+  }, [isDragging]);
 
   // Mouse drag end with momentum
   const handleMouseUp = useCallback(() => {
     setIsDragging(false);
 
-    // Apply momentum based on last velocity
-    const momentum = -velocityRef.current * 0.5; // scale factor
-    setScrollSpeed(baseSpeed + momentum);
-  }, [baseSpeed]);
+    // Re-enable transition for smooth deceleration
+    containerRef.current.style.transition = 'transform 0.05s ease-out';
 
-     // Hover pause - removed
-   // const handleMouseEnter = useCallback(() => setIsPaused(true), []);
-   // const handleMouseLeave = useCallback(() => setIsPaused(false), []);
+    // Apply momentum based on last velocity
+    const momentum = -velocityRef.current * 0.5;
+    speedRef.current = baseSpeed + momentum;
+
+  }, [baseSpeed]);
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
@@ -143,24 +115,20 @@ const InfiniteScrollCarousel = ({
       <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-neutral dark:from-neutral-dark to-transparent z-10 pointer-events-none"></div>
       <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-neutral dark:from-neutral-dark to-transparent z-10 pointer-events-none"></div>
 
-             <div
-         ref={containerRef}
-         className="flex py-2 cursor-grab active:cursor-grabbing select-none"
-         style={{
-           transform: `translateX(-${setPositions[0]}px)`,
-           transition: isDragging ? 'none' : 'transform 0.05s ease-out'
-         }}
-         onMouseDown={handleMouseDown}
-         onMouseMove={handleMouseMove}
-         onMouseUp={handleMouseUp}
-         onMouseLeave={(e) => {
-           if (isDragging) {
-             handleMouseUp();
-           }
-         }}
-       >
-         {/* Create 4 sets of items for truly seamless infinite scroll */}
-         {items.concat(items).concat(items).concat(items).map((item, index) => (
+      <div
+        ref={containerRef}
+        className="flex py-2 cursor-grab active:cursor-grabbing select-none"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={(e) => {
+          if (isDragging) {
+            handleMouseUp();
+          }
+        }}
+      >
+        {/* Render the items twice for a seamless loop */}
+        {items.concat(items).concat(items).concat(items).map((item, index) => (
           <div
             key={index}
             className={`carousel-card flex-shrink-0 mx-3 ${cardClassName}`}
