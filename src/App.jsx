@@ -278,10 +278,12 @@ function App() {
                     { name: 'VS Code', image: '/images/vscode.png' },
                     { name: 'VS', image: '/images/visualstudio.png' },
                     { name: 'PyCharm', image: '/images/pycharm.png' },
+                    { name: 'Figma', image: '/images/figma.png' },
                     { name: 'Selenium', image: '/images/selenium.png' },
                     { name: 'ORS API', image: '/images/openrouteservice.png' },
-                    { name: 'Gemini API', image: '/images/gemini.png' },
-                    { name: 'Auth0', image: '/images/auth0.png' }
+                    { name: 'Auth0', image: '/images/auth0.png' },
+                    { name: 'OpenAI API', image: '/images/openai.png' },
+                    { name: 'Gemini API', image: '/images/gemini.png' }
                   ]}
                   baseSpeed={1}
                   cardClassName="w-40 h-40"

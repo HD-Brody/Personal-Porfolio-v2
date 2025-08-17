@@ -49,10 +49,10 @@ const InfiniteScrollCarousel = ({
       positionRef.current += speedRef.current;
 
       // Reset the position for a seamless loop
-      if (positionRef.current >= itemsWidth) {
-        positionRef.current -= itemsWidth;
+      if (positionRef.current >= itemsWidth * 3) {
+        positionRef.current -= itemsWidth * 3;
       } else if (positionRef.current < 0) {
-        positionRef.current += itemsWidth;
+        positionRef.current += itemsWidth * 3;
       }
       
       // Gradually ease speed back to base speed
