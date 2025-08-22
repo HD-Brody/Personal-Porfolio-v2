@@ -202,12 +202,14 @@ function App() {
                 <InfiniteScrollCarousel
                   items={[
                     { name: 'React', image: '/images/react.png' },
+                    { name: 'Node.js', image: '/images/nodejs.png' },
                     { name: 'Next.js', image: '/images/nextjs.png' },
                     { name: 'Tailwind', image: '/images/tailwind.png' },
                     { name: 'Flask', image: '/images/flask.png' },
                     { name: 'NumPy', image: '/images/numpy.png' },
                     { name: 'Pandas', image: '/images/pandas.png' },
-                    { name: 'Matplotlib', image: '/images/matplotlib.png' }
+                    { name: 'Matplotlib', image: '/images/matplotlib.png' },
+                    { name: 'Supabase', image: '/images/supabase.png' },
                   ]}
                   baseSpeed={1}
                   cardClassName="w-40 h-40"
@@ -241,7 +243,8 @@ function App() {
                 <InfiniteScrollCarousel
                   items={[
                     { name: 'SQLite', image: '/images/sqlite.png' },
-                    { name: 'MongoDB', image: '/images/mongodb.png' }
+                    { name: 'MongoDB', image: '/images/mongodb.png' },
+                    { name: 'PostgreSQL', image: '/images/postgresql.png' }
                   ]}
                   baseSpeed={1}
                   cardClassName="w-40 h-40"
@@ -280,8 +283,8 @@ function App() {
                     { name: 'PyCharm', image: '/images/pycharm.png' },
                     { name: 'Figma', image: '/images/figma.png' },
                     { name: 'Selenium', image: '/images/selenium.png' },
-                    { name: 'ORS API', image: '/images/openrouteservice.png' },
                     { name: 'Auth0', image: '/images/auth0.png' },
+                    { name: 'ORS API', image: '/images/openrouteservice.png' },
                     { name: 'OpenAI API', image: '/images/openai.png' },
                     { name: 'Gemini API', image: '/images/gemini.png' }
                   ]}
