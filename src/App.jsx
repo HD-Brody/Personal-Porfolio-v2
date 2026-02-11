@@ -2,6 +2,7 @@ import { useTypewriter } from 'react-simple-typewriter';
 import ThemeToggle from './ThemeToggle';
 import VantaBackground from './VantaBackground';
 import InfiniteScrollCarousel from './InfiniteScrollCarousel';
+import Experience from './Experience';
 
 function App() {
   const scrollToSection = (sectionId) => {
@@ -45,6 +46,12 @@ function App() {
                 className="text-neutral-text/70 dark:text-white/70 hover:text-primary dark:hover:text-primary-light transition-colors"
               >
                 Skills
+              </button>
+              <button
+                onClick={() => scrollToSection('experience')}
+                className="text-neutral-text/70 dark:text-white/70 hover:text-primary dark:hover:text-primary-light transition-colors"
+              >
+                Experience
               </button>
               <button
                 onClick={() => scrollToSection('projects')}
@@ -164,6 +171,8 @@ function App() {
                 <InfiniteScrollCarousel
                   items={[
                     { name: 'Python', image: '/images/python.png' },
+                    { name: 'Java', image: '/images/java.png'},
+                    { name: 'C', image: '/images/c.png'},
                     { name: 'JavaScript', image: '/images/javascript.png' },
                     { name: 'TypeScript', image: '/images/typescript.png' },
                     { name: 'HTML', image: '/images/html.png' },
@@ -314,8 +323,11 @@ function App() {
         </div>
       </section>
 
+      {/* Experience Section */}
+      <Experience />
+
       {/* Projects Section */}
-      <section id="projects" className="py-32 bg-white dark:bg-neutral-dark transition-colors duration-300">
+      <section id="projects" className="py-32 bg-neutral dark:bg-neutral-dark transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="text-5xl sm:text-6xl lg:text-6xl font-black text-neutral-text dark:text-white text-center mb-20 transition-colors duration-300">
             Projects
@@ -409,7 +421,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 bg-neutral dark:bg-neutral-dark transition-colors duration-300">
+      <section id="contact" className="py-32 bg-white dark:bg-neutral-dark transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-20">
             <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-neutral-text dark:text-white mb-8 transition-colors duration-300">

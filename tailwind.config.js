@@ -26,10 +26,15 @@ export default {
           '0%, 50%, 100%': { opacity: '1' },
           '25%, 75%': { opacity: '0' },
         },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
       animation: {
         blink: 'blink 2.5s step-start infinite',
         'blink-delayed': 'blink 2.5s step-start infinite 2s',
+        fadeIn: 'fadeIn 0.2s ease-in-out',
       },
     },
   },
