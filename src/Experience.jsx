@@ -7,7 +7,7 @@ const experiencesData = [
     title: 'Human Machine Interface Developer',
     company: 'aUToronto',
     period: 'September 2025 - Present',
-    description: 'Developed full-stack web applications using React and Node.js. Collaborated with senior engineers to implement new features and optimize existing codebase.',
+    description: 'Developed a dashboard using React and MapboxGL to visualize real-time vehicle telemetry and obstacle tracking during autonomous competitions. Collaborated with a team of engineers to integrate the dashboard with ROS for seamless data communication.',
     skills: ['React', 'ROS', 'Linux', 'Distributed Systems', 'Real-Time Data Handling', 'Git'],
     images: [
       {
